@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/tetris-logo.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#4b0082">
+<h6>TETRIS</h6>
+
+<div class="grid">
+    <canvas id="board" class="game-board"></canvas>
+    <div class="right-column">
+        <div>
+            <p class="title">Score: <span id="score">0</span></p>
+            <p class="title">Lines: <span id="lines">0</span></p>
+            <p class="title">Level: <span id="level">1</span></p>
+            <canvas id="next" class="next"></canvas>
+        </div>
+        <button onclick="play()" class="play-button">Play</button>
+    </div>
+</div>
+
+
+</body>
+<script src="piece.js"></script>
+<script src="board.js"></script>
+<script src="constants.js"></script>
+<script src="main.js"></script>
+</html>
