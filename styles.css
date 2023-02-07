@@ -1,7 +1,16 @@
 * {
     font-family: 'Press Start 2P', cursive;
 }
-
+h6{
+    font-size: 300%;
+    display: grid;
+    color: deeppink;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    color: deeppink;
+}
 .grid {
     display: grid;
     grid-template-columns: 350px 150px;
