@@ -23,7 +23,6 @@ function play() {
 
 
 document.addEventListener('keydown', event => {
-    console.log(event.code);
     event.preventDefault();
     let p = {...board.piece};
     if (KEY.LEFT.includes(event.code)) {
@@ -35,9 +34,9 @@ document.addEventListener('keydown', event => {
     } else if (KEY.SPACE.includes(event.code)) {
         p.y += 1;
     } else if (KEY.TURN_RIGHT.includes(event.code)) {
-        board.rightRotate(p);
+        p=board.rightRotate(p);
     } else if(KEY.TURN_LET.includes(event.code)){
-        board.leftRotate(p);
+        p=board.leftRotate(p);
     }
 
     if (KEY.SPACE.includes(event.code)) {
@@ -47,6 +46,7 @@ document.addEventListener('keydown', event => {
             board.piece.draw();
             p.y += 1;
         }
+        board.freeze();
     } else if (board.valid(p)) {
         board.piece.move(p);
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
