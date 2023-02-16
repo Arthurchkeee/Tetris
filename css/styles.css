@@ -40,3 +40,50 @@ h6{
     padding: 15px 30px;
     cursor: pointer;
 }
+@media screen and (min-width: 600px) {
+    div.buttons {
+        display: none;
+    }
+}
+#moveRight{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+#moveLeft{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+#turnLeft{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+#turnRight{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+#moveDown{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float:left;
+}
+#drop{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}

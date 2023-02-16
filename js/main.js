@@ -56,6 +56,37 @@ document.addEventListener('keydown', event => {
 
 });
 
+document.addEventListener('pointerdown',event=>{
+    let p = {...board.piece};
+    if (event.target.className==='moveLeft') {
+        p.x -= 1;
+    } else if (event.target.className==='moveRight') {
+        p.x += 1;
+    } else if (event.target.className==='moveDown') {
+        p.y += 1;
+    } else if (event.target.className==='drop') {
+        p.y += 1;
+    } else if (event.target.className==='turnRight') {
+        p=board.rightRotate(p);
+    } else if(event.target.className==='turnLeft'){
+        p=board.leftRotate(p);
+    }
+
+    if (event.target.className==='drop') {
+        while (board.valid(p)) {
+            board.piece.move(p);
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            board.piece.draw();
+            p.y += 1;
+        }
+        board.freeze();
+    } else if (board.valid(p)) {
+        board.piece.move(p);
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        board.piece.draw();
+    }
+    console.log(event.target.className);
+});
 
 function animate(now = 0) {
     time.elapsed = now - time.start;
