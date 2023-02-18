@@ -1,6 +1,9 @@
 * {
     font-family: 'Comic Sans MS 2P', cursive;
 }
+body{
+    touch-action: manipulation;
+}
 h6{
     font-size: 300%;
     display: grid;
@@ -46,8 +49,7 @@ h6{
 }
 
 @media only screen
-    and (max-device-width: 1200px)
-    and (-webkit-min-device-pixel-ratio: 3) {
+    and (max-width: 1200px) {
     #buttons {
         display: block;
     }
